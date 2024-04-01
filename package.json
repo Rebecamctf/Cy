@@ -1,5 +1,21 @@
 {
-  "dependencies": {
-    "cypress": "^9.1.1"
-  }
+  "name": "comercial",
+  "version": "1.0.0",
+  "description": "automacao do comercial",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^13.7.1"
+  },
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Cy"
+  },
+  "keywords": [
+    "automation"
+  ],
+  "author": "thellreh",
+  "license": "MIT"
 }
