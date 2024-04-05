@@ -17,5 +17,8 @@
     "automation"
   ],
   "author": "thellreh",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
 }
