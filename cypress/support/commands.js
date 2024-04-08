@@ -48,7 +48,8 @@ Cypress.Commands.add('login', () => {
     cy.get('#buttonSubmitFormLogin').click();
   });
    
-  
+  /*  ADD NETWORK
+   ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
   Cypress.Commands.add('createNetwork', () => {
     cy.get('#buttonAddNetworkClinics').click();
     cy.get('#nameFieldNetworkCreation').type('Rede automáticaz');
@@ -62,4 +63,124 @@ Cypress.Commands.add('login', () => {
     cy.get('#adminConfirmPasswordFieldNetworkCreation').type('123456');
     cy.get('#buttonSubmitActionModal').click();
   });
- 
+  ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+ */
+
+  /*  ADD TERMS -> NÃO FINALIZOU
+   ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+  Cypress.Commands.add('uploadDocument', () => {
+    cy.get('#termsMenuItem').click();
+    cy.get('#buttonAddTermTerms').click();
+  
+    // Verificar se o campo está visível antes de selecionar
+    cy.get('#termTypeAutocompleteTermCreation').first();
+      //cy.get('#termTypeAutocompleteTermCreation').should('be.visible', { timeout: 30000 }).select(firstOptionText);
+    
+    // Esperar pelo carregamento do arquivo
+    
+    cy.get('#inputFileTermCreation', { timeout: 10000, force: true }).then(($inputFile) => {
+      cy.fixture('termo.pdf').then((fileContent) => {
+        // Cria um objeto de arquivo
+        const file = new File([fileContent], 'termo.pdf', { type: 'application/pdf' });
+        // Cria um evento de alteração de arquivo
+        const event = { dataTransfer: { files: [file] } };
+        // Aciona o evento de alteração de arquivo no elemento
+        cy.wrap($inputFile).click({force: true});
+      });
+    });
+    
+  
+    // Verificar se o botão está visível antes de clicar
+    cy.get('#buttonSubmitActionModal').should('be.visible').click( {force: true});
+  });
+    ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+ */
+//==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+== 
+/*
+// CREATING ASSESSORS
+
+Cypress.Commands.add('createAdvisor', () => {
+
+  // Criar novo Assessor
+  cy.get('#advisorsMenuItem', { timeout: 10000 }).should('be.visible').click()
+  cy.get('#buttonAddResponsibles').click()
+  cy.get('#nameFieldResponsibleCreation').type('Novo Assessor auto')
+  cy.get('#cpfFieldResponsibleCreation').type('37233485569')
+  cy.get('#birthdateFieldResponsibleCreation').type('01012000')
+  cy.get('#emailFieldResponsibleCreation').type('advisor@example.com')
+  cy.get('#phoneNumberFieldResponsibleCreation').type('11987654322')
+  cy.get('#passwordFieldResponsibleCreation').type('senha123')
+  cy.get('#confirmPasswordFieldResponsibleCreation').type('senha123')
+  cy.get('#cdcFeePercentageFieldResponsibleCreation').type('5000')
+  cy.get('#saasFeePercentageFieldResponsibleCreation').type('5000')
+  cy.get('#membershipFeePercentageFieldResponsibleCreation').type('5000')
+  cy.get('#operatingFeePercentageFieldResponsibleCreation').type('5000')
+  cy.get('#buttonSubmitActionModal').click()
+});
+*/
+//==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+/*
+// CREATE CONSULTANT
+
+Cypress.Commands.add('createConsultant', () => {
+
+  cy.get('#advisorsMenuItem', { timeout: 10000 }).should('be.visible').click()
+  cy.get('#tabConsultantsResponsibles').click()
+  cy.get('#buttonAddResponsibles').click()
+  cy.get('#nameFieldResponsibleCreation').type('New consultant auto')
+  cy.get('#cpfFieldResponsibleCreation').type('08522137196')
+  cy.get('#birthdateFieldResponsibleCreation').type('01012000')
+  cy.get('#emailFieldResponsibleCreation').type('consultant@example.com')
+  cy.get('#phoneNumberFieldResponsibleCreation').type('11987654323')
+  cy.get('#passwordFieldResponsibleCreation').type('senha123')
+  cy.get('#confirmPasswordFieldResponsibleCreation').type('senha123')
+  cy.get('#membershipFeePercentageFieldResponsibleCreation').type('5000')
+  cy.get('#buttonSubmitActionModal').click()
+});
+*/
+//==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+/*
+// CREATE ANALYST
+
+Cypress.Commands.add('createAnalyst', () => {
+
+    cy.get('#advisorsMenuItem', { timeout: 10000 }).should('be.visible').click();
+    cy.get('#tabAnalystsResponsibles').click()
+    cy.get('#buttonAddResponsibles').click()
+    cy.get('#nameFieldResponsibleCreation').type('New Analyst auto')
+    cy.get('#cpfFieldResponsibleCreation').type('38673420326')
+    cy.get('#birthdateFieldResponsibleCreation').type('01012000')
+    cy.get('#emailFieldResponsibleCreation').type('analyst@example.com')
+    cy.get('#phoneNumberFieldResponsibleCreation').type('11987654324')
+    cy.get('#passwordFieldResponsibleCreation').type('senha123')
+    cy.get('#confirmPasswordFieldResponsibleCreation').type('senha123')
+    cy.get('#buttonSubmitActionModal').click()
+
+});
+*/
+
+
+//==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
+/*
+// CREATE PARTNER
+Cypress.Commands.add('createPartner', () => {
+  cy.get('#advisorsMenuItem', { timeout: 10000 }).should('be.visible').click();
+  cy.get('#tabPartnerResponsibles').click()
+  cy.get('#buttonAddResponsibles', { timeout: 10000 }).should('be.visible').click();
+
+  // Preencher os campos conforme necessário
+  cy.get('#nameFieldResponsibleCreation').type('Nome do Parceiro');
+  cy.get('#cpfFieldResponsibleCreation').type('27964012436');
+  cy.get('#birthdateFieldResponsibleCreation').type('01011980');
+  cy.get('#emailFieldResponsibleCreation').type('parceiro@example.com');
+  cy.get('#phoneNumberFieldResponsibleCreation').type('11987654321');
+  cy.get('#passwordFieldResponsibleCreation').type('senha123');
+  cy.get('#confirmPasswordFieldResponsibleCreation').type('senha123');
+  cy.get('#cdcFeePercentageFieldResponsibleCreation').type('5000');
+  cy.get('#saasFeePercentageFieldResponsibleCreation').type('5000');
+  cy.get('#membershipFeePercentageFieldResponsibleCreation').type('5000');
+
+  // Clicar para finalizar o cadastro
+  cy.get('#buttonSubmitActionModal').click();
+});
+*/
