@@ -14,7 +14,7 @@ Cypress.Commands.add('login', () => {
   });
    
 
-
+// CREATE 
   Cypress.Commands.add('createNetwork', () => {
     // Continuar com as interações para criar a rede
     cy.get('#buttonAddNetworkClinics').click();
@@ -30,6 +30,7 @@ Cypress.Commands.add('login', () => {
     cy.get('#adminConfirmPasswordFieldNetworkCreation').type(password);
     cy.get('#buttonSubmitActionModal').click();
   });
+
  */  
 // ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
 // NÃO FUNCIONA COM O FAKER, DÁ ERRO NO CAMPO CPF
@@ -65,6 +66,26 @@ Cypress.Commands.add('login', () => {
   });
   ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==
  */
+// UPDATE + READ -- REDE
+  Cypress.Commands.add('updateNetwork', () => {
+    // Adicionar asserções necessárias aqui
+    cy.get('#networksMenuItem', { timeout: 10000, force: true }).should('be.visible')
+   
+    // rede automatica
+    // INFORMAÇÕES - editar nome sem alterar e salvar
+    cy.get('#index0NetworkCardClinics').click()
+    //cy.get('#tabActivitiesNetworkDetails').click()
+    //cy.get('#editFieldNetworkNameNetworkDetailsEdit').click()
+    //cy.get('#editFieldNetworkNameNetworkDetailsSubmit').click()
+
+    // UPDATE + READ -- CLÍNICA
+    cy.get('#networkClinicsTableRowIndex0', { timeout: 10000, force: true }).click()
+    cy.get('#tabInformationsClinicDetails', { timeout: 10000, force: true }).should('be.visible')
+    cy.waitUntil(() => cy.get('#editFieldContactTradingNameClinicDetailsEdit').should('exist'), { timeout: 10000, interval: 1000 })
+    cy.get('.MuiInputBase-root-70.MuiOutlinedInput-root-58 input[type="text"]').clear().type('Novo valor do campo')
+
+  });
+
 
   /*  ADD TERMS -> NÃO FINALIZOU
    ==+====+====+====+====+====+====+====+====+====+====+====+====+====+====+==

@@ -39,6 +39,9 @@ describe('Login', () => {
     cy.get('#adminConfirmPasswordFieldNetworkCreation').type('123456')
     cy.get('#buttonSubmitActionModal').click()
 
+    // EDITAR DADOS DA REDE
+    
+
      // ==*====*====*====*====*====*====*====*====*====*====*====*====*==
     // *** CLÍNICAS ***   
 
