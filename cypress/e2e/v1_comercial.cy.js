@@ -3,11 +3,11 @@
 describe('Login', () => {
     
   it('Deve fazer login com sucesso', () => {
-  cy.visit('https://comercialhml.drcash.com.br/');
+  cy.visit('');
 
   // Preencher os campos de nome de usuário e senha 
-  cy.get('#inputEmailLogin').type('comercialadmin@drcash.com.br');
-  cy.get('#inputPasswordLogin').type('drcash22!');
+  cy.get('#inputEmailLogin').type();
+  cy.get('#inputPasswordLogin').type('');
 
   // Clicar no botão "Fazer login"
   cy.get('#buttonSubmitFormLogin').click();

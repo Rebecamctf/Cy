@@ -1,9 +1,9 @@
 
 {
-  "baseUrl": "https://comercialhml.drcash.com.br/",
+  "baseUrl": "",
   "loginCredentials": {
-    "username": "comercialadmin@drcash.com.br",
-    "password": "drcash22!"
+    "username": "",
+    "password": ""
   }
   
 }
