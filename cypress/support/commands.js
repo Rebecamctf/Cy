@@ -13,6 +13,7 @@ Cypress.Commands.add('login', () => {
     cy.get('#buttonSubmitFormLogin').click();
   });
    
+  
 
 // CREATE 
   Cypress.Commands.add('createNetwork', () => {
